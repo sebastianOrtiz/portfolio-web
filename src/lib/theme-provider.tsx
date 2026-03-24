@@ -11,6 +11,14 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+/**
+ * External store for theme state.
+ *
+ * Uses `useSyncExternalStore` instead of `useState` to avoid the React 19
+ * lint rule against calling setState inside useEffect. The store keeps the
+ * theme value outside React's state, syncs it to localStorage and the
+ * `<html>` class list, and notifies subscribers on change.
+ */
 let currentTheme: Theme = "dark";
 const listeners = new Set<() => void>();
 
@@ -18,6 +26,7 @@ function getTheme() {
   return currentTheme;
 }
 
+/** Persists theme to localStorage, updates the DOM class, and notifies React */
 function setTheme(next: Theme) {
   currentTheme = next;
   if (typeof window !== "undefined") {
@@ -29,15 +38,22 @@ function setTheme(next: Theme) {
   listeners.forEach((l) => l());
 }
 
+/** Subscribe callback for useSyncExternalStore */
 function subscribe(callback: () => void) {
   listeners.add(callback);
   return () => listeners.delete(callback);
 }
 
+/** Server-side default — prevents hydration mismatch (matches layout.tsx className) */
 function getServerSnapshot() {
   return "dark" as Theme;
 }
 
+/**
+ * Provides dark/light theme context to the component tree.
+ * On mount, reads the user's preference from localStorage or the OS
+ * `prefers-color-scheme` media query, then applies it to the DOM.
+ */
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const theme = useSyncExternalStore(subscribe, getTheme, getServerSnapshot);
 
@@ -60,6 +76,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * Access the current theme and toggle function.
+ * Must be used within a `<ThemeProvider>`.
+ */
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) throw new Error("useTheme must be used within ThemeProvider");

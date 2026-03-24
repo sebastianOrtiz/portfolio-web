@@ -63,16 +63,31 @@ export const skills = [
   },
 ];
 
+/**
+ * Represents a portfolio project displayed in the Projects section.
+ * Each project has both static data (here) and translated content (in i18n/).
+ * The `slug` field is used to match translated content by index alignment.
+ */
 export interface Project {
+  /** URL-friendly identifier, used to align with i18n translations by index */
   slug: string;
+  /** Default display name (English). Overridden by i18n if available */
   title: string;
+  /** Short tagline describing the project's technical approach */
   subtitle: string;
+  /** Brief summary of what the project does */
   description: string;
+  /** The engineering challenge this project demonstrates */
   problem: string;
+  /** Technologies used, displayed as badges */
   stack: string[];
+  /** Key technical achievements, max 3 shown in cards */
   highlights: string[];
+  /** URL to the live deployment */
   demoUrl: string;
+  /** URL to the source code repository */
   repoUrl: string;
+  /** Current deployment status — affects badge color in UI */
   status: "live" | "coming-soon";
 }
 

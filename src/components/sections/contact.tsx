@@ -6,14 +6,20 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { FormInput } from "@/components/ui/form-input";
 import type { Dictionary } from "@/i18n/types";
 
+type FormStatus = "idle" | "sending" | "sent";
+
+/** Simulated send delay until a real backend is integrated */
+const SIMULATED_SEND_DELAY_MS = 1000;
+
+/** Contact section with a form and contact information sidebar */
 export function Contact({ dict }: { dict: Dictionary }) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
-    // TODO: integrate with real backend
-    setTimeout(() => setStatus("sent"), 1000);
+    // TODO: integrate with real backend (nexus-crm-api or email service)
+    setTimeout(() => setStatus("sent"), SIMULATED_SEND_DELAY_MS);
   };
 
   const buttonLabel =

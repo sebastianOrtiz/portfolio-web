@@ -1,8 +1,15 @@
+/** Supported locale codes (ISO 639-1) */
 export type Locale = "en" | "es";
 
 export const locales: Locale[] = ["en", "es"];
 export const defaultLocale: Locale = "en";
 
+/**
+ * Complete translation dictionary for a single locale.
+ * Each section key corresponds to a page section component.
+ * `projects.items` must match the order of `projects` array in data/content.ts
+ * to allow index-based alignment between static data and translations.
+ */
 export interface Dictionary {
   nav: {
     home: string;

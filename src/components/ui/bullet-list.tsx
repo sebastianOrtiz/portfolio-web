@@ -1,8 +1,14 @@
 interface BulletListProps {
+  /** Heading displayed above the list */
   title: string;
+  /** Items to render as bullet points with accent-colored dots */
   items: string[];
 }
 
+/**
+ * Renders a titled list with accent-colored bullet dots.
+ * Used in the About section for core focus areas and differentiators.
+ */
 export function BulletList({ title, items }: BulletListProps) {
   return (
     <div>

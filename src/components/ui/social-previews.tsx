@@ -5,6 +5,13 @@ import { GitHubIcon, LinkedInIcon, BuildingIcon, MapPinIcon, RepoIcon } from "./
 import { siteConfig } from "@/data/content";
 import { useGitHubProfile } from "@/lib/use-github-profile";
 
+/** LinkedIn brand color — used for the profile icon background */
+const LINKEDIN_BRAND_COLOR = "bg-[#0A66C2]";
+
+/** Max number of repos shown in the GitHub preview card */
+const MAX_PREVIEW_REPOS = 3;
+
+/** Tailwind background classes for GitHub language indicators */
 const LANG_COLORS: Record<string, string> = {
   TypeScript: "bg-blue-500",
   Python: "bg-yellow-500",
@@ -16,9 +23,11 @@ const LANG_COLORS: Record<string, string> = {
   "C#": "bg-green-600",
 };
 
+/** Shared styling for the circular icon buttons in the hero section */
 const ICON_BUTTON_CLASS =
   "inline-flex h-12 w-12 items-center justify-center rounded-lg border border-zinc-300 text-zinc-600 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800";
 
+/** Live GitHub profile card shown on hover over the GitHub button */
 function GitHubPreview() {
   const username = siteConfig.github.split("/").pop() ?? "";
   const { profile, repos, loading } = useGitHubProfile(username);
@@ -120,19 +129,18 @@ function LinkedInPreview() {
   return (
     <div className="w-64">
       <div className="flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A66C2]">
+        <div className={`flex h-12 w-12 items-center justify-center rounded-full ${LINKEDIN_BRAND_COLOR}`}>
           <LinkedInIcon className="h-6 w-6 text-white" />
         </div>
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-            Sebastian Ortiz Valencia
+            {siteConfig.name}
           </p>
           <p className="text-xs text-zinc-500 dark:text-zinc-400">LinkedIn</p>
         </div>
       </div>
       <p className="mt-2 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
-        Senior Fullstack / Backend Engineer with 9+ years of experience building scalable
-        systems.
+        {siteConfig.headline} — {siteConfig.description.split(".")[0]}.
       </p>
       <div className="mt-3 border-t border-zinc-100 pt-3 dark:border-zinc-800">
         <p className="text-xs text-zinc-500 dark:text-zinc-400">

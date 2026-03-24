@@ -1,8 +1,14 @@
 interface SectionHeaderProps {
+  /** Section title displayed as an h2 */
   title: string;
+  /** Optional paragraph below the title, separated by an accent bar */
   description?: string;
 }
 
+/**
+ * Consistent header used at the top of each page section.
+ * Renders a bold title, a short accent-colored bar, and an optional description.
+ */
 export function SectionHeader({ title, description }: SectionHeaderProps) {
   return (
     <>

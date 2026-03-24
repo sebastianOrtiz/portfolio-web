@@ -2,6 +2,9 @@ import { projects } from "@/data/content";
 import { SectionHeader } from "@/components/ui/section-header";
 import type { Dictionary } from "@/i18n/types";
 
+/** Maximum number of highlights shown per project card */
+const MAX_HIGHLIGHTS = 3;
+
 export function Projects({ dict }: { dict: Dictionary }) {
   return (
     <section id="projects" className="px-6 py-24">
@@ -36,7 +39,7 @@ function ProjectCard({ project, translated, labels }: ProjectCardProps) {
   const title = translated?.title ?? project.title;
   const subtitle = translated?.subtitle ?? project.subtitle;
   const description = translated?.description ?? project.description;
-  const highlights = translated?.highlights ?? project.highlights.slice(0, 3);
+  const highlights = translated?.highlights ?? project.highlights.slice(0, MAX_HIGHLIGHTS);
   const isComingSoon = project.status === "coming-soon";
 
   return (
