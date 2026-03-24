@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Accent palette — change these to rebrand the entire site */
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+
+  --animate-fade-in: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Theme transition */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.15s ease;
+}
+
+/* Light theme */
+:root {
+  color-scheme: light;
+
+  --accent-50: #fef2f2;
+  --accent-100: #fee2e2;
+  --accent-200: #fecaca;
+  --accent-300: #fca5a5;
+  --accent-400: #f87171;
+  --accent-500: #ef4444;
+  --accent-600: #dc2626;
+  --accent-700: #b91c1c;
+  --accent-800: #991b1b;
+  --accent-900: #7f1d1d;
+}
+
+/* Dark theme */
+.dark {
+  color-scheme: dark;
+
+  --accent-50: #fef2f2;
+  --accent-100: #fee2e2;
+  --accent-200: #fecaca;
+  --accent-300: #fca5a5;
+  --accent-400: #f87171;
+  --accent-500: #ef4444;
+  --accent-600: #dc2626;
+  --accent-700: #b91c1c;
+  --accent-800: #991b1b;
+  --accent-900: #7f1d1d;
+}
