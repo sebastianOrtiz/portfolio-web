@@ -3,6 +3,7 @@ import { About } from "@/components/sections/about";
 import { Projects } from "@/components/sections/projects";
 import { Skills } from "@/components/sections/skills";
 import { Contact } from "@/components/sections/contact";
+import { SearchDemo } from "@/components/sections/search-demo";
 import { getDictionary, type Locale } from "@/i18n";
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
@@ -15,6 +16,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <About dict={dict} />
       <Projects dict={dict} />
       <Skills dict={dict} />
+      <SearchDemo dict={dict} />
       <Contact dict={dict} />
     </>
   );

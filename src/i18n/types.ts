@@ -69,6 +69,20 @@ export interface Dictionary {
     locationTitle: string;
     locationDesc: string;
   };
+  searchDemo: {
+    title: string;
+    subtitle: string;
+    placeholder: string;
+    search: string;
+    searching: string;
+    noResults: string;
+    noResultsDesc: string;
+    relevance: string;
+    source: string;
+    resultsCount: string;
+    poweredBy: string;
+    errorMessage: string;
+  };
   footer: {
     builtWith: string;
   };

@@ -106,6 +106,24 @@ const en: Dictionary = {
     locationTitle: "Location",
     locationDesc: "Remote — Open to remote opportunities worldwide",
   },
+  searchDemo: {
+    title: "Semantic Search Demo",
+    subtitle:
+      "Try searching through indexed documents using AI-powered semantic similarity",
+    placeholder: "Type your search query...",
+    search: "Search",
+    searching: "Searching...",
+    noResults: "No results found",
+    noResultsDesc:
+      "Try a different query or check back when documents are indexed",
+    relevance: "Relevance",
+    source: "Source",
+    resultsCount: "{{count}} results found",
+    poweredBy:
+      "Powered by sentence-transformers (all-MiniLM-L6-v2) — local model, no API costs",
+    errorMessage:
+      "Could not reach the search API. The service may be temporarily unavailable — try again later.",
+  },
   footer: {
     builtWith: "Built with Next.js, Tailwind CSS & TypeScript.",
   },

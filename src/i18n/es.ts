@@ -106,6 +106,24 @@ const es: Dictionary = {
     locationTitle: "Ubicacion",
     locationDesc: "Remoto — Abierto a oportunidades remotas en todo el mundo",
   },
+  searchDemo: {
+    title: "Demo de Busqueda Semantica",
+    subtitle:
+      "Prueba buscar en documentos indexados usando similitud semantica impulsada por IA",
+    placeholder: "Escribe tu consulta de busqueda...",
+    search: "Buscar",
+    searching: "Buscando...",
+    noResults: "Sin resultados",
+    noResultsDesc:
+      "Intenta con otra consulta o vuelve cuando haya documentos indexados",
+    relevance: "Relevancia",
+    source: "Fuente",
+    resultsCount: "{{count}} resultados encontrados",
+    poweredBy:
+      "Impulsado por sentence-transformers (all-MiniLM-L6-v2) — modelo local, sin costos de API",
+    errorMessage:
+      "No se pudo conectar con la API de busqueda. El servicio puede estar temporalmente no disponible — intenta mas tarde.",
+  },
   footer: {
     builtWith: "Construido con Next.js, Tailwind CSS & TypeScript.",
   },
