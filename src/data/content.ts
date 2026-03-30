@@ -109,8 +109,8 @@ export const projects: Project[] = [
       "Dashboard with KPIs and revenue charts",
     ],
     demoUrl: "https://nexus-crm-dashboard.sebasing.dev",
-    repoUrl: "https://github.com/sebasing/sebasing-portfolio",
-    status: "coming-soon",
+    repoUrl: "https://github.com/sebastianOrtiz/nexus-crm-api",
+    status: "live",
   },
   {
     slug: "event-driven-service",
@@ -129,8 +129,8 @@ export const projects: Project[] = [
       "Structured JSON logging",
     ],
     demoUrl: "https://nexus-crm-events-api.sebasing.dev",
-    repoUrl: "https://github.com/sebasing/sebasing-portfolio",
-    status: "coming-soon",
+    repoUrl: "https://github.com/sebastianOrtiz/event-driven-service",
+    status: "live",
   },
   {
     slug: "semantic-search",
@@ -149,7 +149,7 @@ export const projects: Project[] = [
       "Clean separation between ingestion and query paths",
     ],
     demoUrl: "https://nexus-crm-semantic-search-api.sebasing.dev",
-    repoUrl: "https://github.com/sebasing/sebasing-portfolio",
-    status: "coming-soon",
+    repoUrl: "https://github.com/sebastianOrtiz/semantic-search-api",
+    status: "live",
   },
 ];
