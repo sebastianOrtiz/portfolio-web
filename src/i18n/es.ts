@@ -3,7 +3,7 @@ import type { Dictionary } from "./types";
 const es: Dictionary = {
   nav: {
     home: "Inicio",
-    about: "Sobre mi",
+    about: "Sobre mí",
     projects: "Proyectos",
     skills: "Habilidades",
     contact: "Contacto",
@@ -12,59 +12,59 @@ const es: Dictionary = {
     badge: "Disponible para oportunidades",
     headline: "Ingeniero Senior Fullstack / Backend",
     description:
-      "9+ anos construyendo sistemas backend escalables, APIs REST, infraestructura cloud y frontends modernos. Transformo requisitos complejos en software limpio y mantenible.",
+      "9+ años construyendo sistemas backend escalables, APIs REST, infraestructura cloud y frontends modernos. Transformo requisitos complejos en software limpio y mantenible.",
     viewProjects: "Ver Proyectos",
     getInTouch: "Contactar",
   },
   about: {
-    title: "Sobre Mi",
+    title: "Sobre Mí",
     intro:
-      "Soy ingeniero de software senior con 9+ anos de experiencia disenando y construyendo sistemas en produccion en diversas industrias. Mi fortaleza principal es la arquitectura backend — APIs, bases de datos, infraestructura cloud y sistemas distribuidos — pero tambien me siento comodo construyendo frontends modernos cuando el proyecto lo requiere.",
+      "Soy ingeniero de software senior con 9+ años de experiencia diseñando y construyendo sistemas en producción en diversas industrias. Mi fortaleza principal es la arquitectura backend — APIs, bases de datos, infraestructura cloud y sistemas distribuidos — pero también me siento cómodo construyendo frontends modernos cuando el proyecto lo requiere.",
     coreFocus: "Enfoque Principal",
     focus: [
-      "Arquitectura backend y diseno de APIs (REST, microservicios)",
+      "Arquitectura backend y diseño de APIs (REST, microservicios)",
       "Infraestructura cloud (AWS, Google Cloud)",
-      "Diseno y optimizacion de bases de datos (PostgreSQL, Redis)",
+      "Diseño y optimización de bases de datos (PostgreSQL, Redis)",
       "Sistemas event-driven y distribuidos",
       "Desarrollo frontend moderno (Angular, React/Next.js)",
-      "DevOps, contenedorizacion y pipelines CI/CD",
+      "DevOps, contenedorización y pipelines CI/CD",
     ],
     differentiators: "Lo Que Me Diferencia",
     diffs: [
       "Ownership completo desde arquitectura hasta despliegue",
-      "Enfasis en codigo limpio y decisiones tecnicas justificadas",
+      "Énfasis en código limpio y decisiones técnicas justificadas",
       "Experiencia en startups y entornos enterprise",
-      "Enfoque pragmatico: resolver el problema real, evitar sobreingenieria",
+      "Enfoque pragmático: resolver el problema real, evitar sobreingeniería",
     ],
   },
   projects: {
     title: "Proyectos",
     description:
-      "Proyectos demostrativos reales con arquitectura seria, codigo limpio y despliegues en vivo. Cada uno demuestra diferentes aspectos de la ingenieria full-stack.",
-    comingSoon: "Proximamente",
+      "Proyectos demostrativos reales con arquitectura seria, código limpio y despliegues en vivo. Cada uno demuestra diferentes aspectos de la ingeniería full-stack.",
+    comingSoon: "Próximamente",
     live: "En Vivo",
     highlights: "Aspectos clave",
     liveDemo: "Demo en Vivo",
-    sourceCode: "Codigo Fuente",
+    sourceCode: "Código Fuente",
     items: [
       {
         slug: "nexus-crm",
         title: "NexusCRM",
         subtitle: "CRM multi-tenant con arquitectura full-stack",
         description:
-          "Un CRM multi-tenant liviano que demuestra arquitectura SaaS con autenticacion JWT, permisos por rol y flujo de ventas basado en pipeline.",
+          "Un CRM multi-tenant liviano que demuestra arquitectura SaaS con autenticación JWT, permisos por rol y flujo de ventas basado en pipeline.",
         highlights: [
           "Aislamiento de datos multi-tenant via organization_id",
-          "Autenticacion JWT con tokens de acceso/refresco",
+          "Autenticación JWT con tokens de acceso/refresco",
           "Control de acceso por roles (Owner, Admin, Sales Rep, Viewer)",
         ],
       },
       {
         slug: "event-driven-service",
         title: "Onboarding Event-Driven",
-        subtitle: "Procesamiento asincrono con Go y Redis Streams",
+        subtitle: "Procesamiento asíncrono con Go y Redis Streams",
         description:
-          "Un servicio que demuestra arquitectura event-driven usando Go y Redis Streams. Maneja el onboarding de usuarios a traves de una cadena de workers desacoplados.",
+          "Un servicio que demuestra arquitectura event-driven usando Go y Redis Streams. Maneja el onboarding de usuarios a través de una cadena de workers desacoplados.",
         highlights: [
           "Consumer groups de Redis Streams para procesamiento confiable",
           "Correlation IDs para trazabilidad end-to-end",
@@ -76,7 +76,7 @@ const es: Dictionary = {
         title: "API de Busqueda Semantica",
         subtitle: "Inteligencia documental con embeddings locales",
         description:
-          "Una API para subir documentos, procesarlos en chunks, generar embeddings con un modelo local y realizar busqueda por similitud semantica.",
+          "Una API para subir documentos, procesarlos en chunks, generar embeddings con un modelo local y realizar búsqueda por similitud semántica.",
         highlights: [
           "Embeddings locales con all-MiniLM-L6-v2 (costo cero de API)",
           "Pipeline de chunking con overlap configurable",
@@ -91,7 +91,7 @@ const es: Dictionary = {
   contact: {
     title: "Contacto",
     description:
-      "Interesado en trabajar juntos? No dudes en escribirme a traves del formulario o conectar por redes sociales.",
+      "¿Interesado en trabajar juntos? No dudes en escribirme a través del formulario o conectar por redes sociales.",
     nameLabel: "Nombre",
     namePlaceholder: "Tu nombre",
     emailLabel: "Email",
@@ -103,26 +103,26 @@ const es: Dictionary = {
     sent: "Mensaje Enviado!",
     emailTitle: "Email",
     connectTitle: "Conectar",
-    locationTitle: "Ubicacion",
+    locationTitle: "Ubicación",
     locationDesc: "Remoto — Abierto a oportunidades remotas en todo el mundo",
   },
   searchDemo: {
     title: "Demo de Busqueda Semantica",
     subtitle:
-      "Prueba buscar en documentos indexados usando similitud semantica impulsada por IA",
+      "Prueba buscar en documentos indexados usando similitud semántica impulsada por IA",
     placeholder: "Escribe tu consulta de busqueda...",
     search: "Buscar",
     searching: "Buscando...",
     noResults: "Sin resultados",
     noResultsDesc:
-      "Intenta con otra consulta o vuelve cuando haya documentos indexados",
+      "Intenta con otra consulta o vuelve cuando haya documentos indexados.",
     relevance: "Relevancia",
     source: "Fuente",
     resultsCount: "{{count}} resultados encontrados",
     poweredBy:
       "Impulsado por sentence-transformers (all-MiniLM-L6-v2) — modelo local, sin costos de API",
     errorMessage:
-      "No se pudo conectar con la API de busqueda. El servicio puede estar temporalmente no disponible — intenta mas tarde.",
+      "No se pudo conectar con la API de búsqueda. El servicio puede estar temporalmente no disponible — intenta más tarde.",
   },
   footer: {
     builtWith: "Construido con Next.js, Tailwind CSS & TypeScript.",
