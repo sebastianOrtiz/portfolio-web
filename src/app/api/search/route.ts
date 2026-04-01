@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { checkRateLimit } from "@/lib/rate-limit";
 
-const SEARCH_API_URL = process.env.SEARCH_API_URL || "https://nexus-crm-semantic-search-api.sebasing.dev";
+const SEARCH_API_URL = process.env.SEARCH_API_URL!;
 
 function getIP(req: NextRequest): string {
   return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";

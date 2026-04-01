@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { checkRateLimit } from "@/lib/rate-limit";
 
-const EVENT_API_URL = process.env.EVENT_API_URL || "https://nexus-crm-events-api.sebasing.dev";
+const EVENT_API_URL = process.env.EVENT_API_URL!;
 const EVENT_API_KEY = process.env.EVENT_API_KEY || "";
 
 function getIP(req: NextRequest): string {
