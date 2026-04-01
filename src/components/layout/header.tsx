@@ -22,8 +22,9 @@ export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a
           href="#home"
-          className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100"
+          className="flex items-center gap-2 text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100"
         >
+          <img src="/logo.png" alt="sebasing.dev" className="h-8 w-8" />
           sebasing<span className="text-accent-600 dark:text-accent-400">.dev</span>
         </a>
 
