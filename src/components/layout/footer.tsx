@@ -1,5 +1,15 @@
 import { siteConfig } from "@/data/content";
+import { GitHubButton, LinkedInButton } from "@/components/ui/social-previews";
 import type { Dictionary } from "@/i18n/types";
+
+function EmailIcon() {
+  return (
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="M22 7l-10 7L2 7" />
+    </svg>
+  );
+}
 
 export function Footer({ dict }: { dict: Dictionary }) {
   return (
@@ -8,28 +18,15 @@ export function Footer({ dict }: { dict: Dictionary }) {
         <p className="text-sm text-zinc-500 dark:text-zinc-400">
           &copy; {new Date().getFullYear()} {siteConfig.name}. {dict.footer.builtWith}
         </p>
-        <div className="flex gap-6">
-          <a
-            href={siteConfig.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-          >
-            GitHub
-          </a>
-          <a
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-          >
-            LinkedIn
-          </a>
+        <div className="flex gap-3">
+          <GitHubButton />
+          <LinkedInButton />
           <a
             href={`mailto:${siteConfig.email}`}
-            className="text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            className="inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-lg border border-zinc-300 text-zinc-600 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            data-tooltip="Email"
           >
-            Email
+            <EmailIcon />
           </a>
         </div>
       </div>

@@ -19,6 +19,9 @@
   --color-accent-900: var(--accent-900);
 
   --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-aurora: aurora 8s ease-in-out infinite;
+  --animate-aurora-2: aurora-2 12s ease-in-out infinite;
+  --animate-aurora-3: aurora-3 10s ease-in-out infinite;
 }
 
 @keyframes fade-in {
@@ -30,6 +33,81 @@
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
+}
+
+/* Aurora gradient blobs */
+@keyframes aurora {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -50px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.9); }
+  75% { transform: translate(50px, 30px) scale(1.05); }
+}
+
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.15); }
+  66% { transform: translate(20px, -40px) scale(0.95); }
+}
+
+@keyframes aurora-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(40px, 20px) scale(1.05); }
+  40% { transform: translate(-30px, -30px) scale(1.1); }
+  60% { transform: translate(20px, 40px) scale(0.9); }
+  80% { transform: translate(-50px, 10px) scale(1.05); }
+}
+
+/* Scroll reveal */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tooltip */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  background: var(--color-zinc-800, #27272a);
+  color: var(--color-zinc-100, #f4f4f5);
+}
+
+:where(.dark) [data-tooltip]::after {
+  background: var(--color-zinc-200, #e4e4e7);
+  color: var(--color-zinc-900, #18181b);
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.visible {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Smooth scroll */

@@ -1,5 +1,6 @@
 import { skills } from "@/data/content";
 import { SectionHeader } from "@/components/ui/section-header";
+import { stackIconMap } from "@/components/ui/tech-icons";
 import type { Dictionary } from "@/i18n/types";
 
 export function Skills({ dict }: { dict: Dictionary }) {
@@ -15,14 +16,22 @@ export function Skills({ dict }: { dict: Dictionary }) {
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {group.items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                {group.items.map((skill) => {
+                  const Icon = stackIconMap[skill];
+                  return (
+                    <span
+                      key={skill}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+                    >
+                      {Icon && (
+                        <span className="h-4 w-4 shrink-0 [&>svg]:h-4 [&>svg]:w-4">
+                          <Icon />
+                        </span>
+                      )}
+                      {skill}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           ))}

@@ -1,19 +1,20 @@
 import { siteConfig } from "@/data/content";
 import { GitHubButton, LinkedInButton } from "@/components/ui/social-previews";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import type { Dictionary } from "@/i18n/types";
 
 export function Hero({ dict }: { dict: Dictionary }) {
   return (
     <section
       id="home"
-      className="flex min-h-screen items-center justify-center px-6 pt-16"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-6 pt-16 dark:bg-zinc-950"
     >
-      <div className="mx-auto max-w-4xl text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-1.5 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
-          <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
-          {dict.hero.badge}
-        </div>
+      <AuroraBackground />
 
+      {/* Fade to background at the bottom */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-b from-transparent to-white dark:to-zinc-950" />
+
+      <div className="relative mx-auto max-w-4xl text-center">
         <h1 className="mb-6 text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-6xl lg:text-7xl">
           {siteConfig.name}
         </h1>

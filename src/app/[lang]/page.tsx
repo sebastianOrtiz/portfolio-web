@@ -3,7 +3,7 @@ import { About } from "@/components/sections/about";
 import { Projects } from "@/components/sections/projects";
 import { Skills } from "@/components/sections/skills";
 import { Contact } from "@/components/sections/contact";
-import { SearchDemo } from "@/components/sections/search-demo";
+import { ScrollRevealInit } from "@/components/ui/scroll-reveal-init";
 import { getDictionary, type Locale } from "@/i18n";
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
@@ -12,12 +12,20 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
+      <ScrollRevealInit />
       <Hero dict={dict} />
-      <About dict={dict} />
-      <Projects dict={dict} />
-      <Skills dict={dict} />
-      <SearchDemo dict={dict} />
-      <Contact dict={dict} />
+      <div className="reveal">
+        <About dict={dict} />
+      </div>
+      <div className="reveal">
+        <Projects dict={dict} />
+      </div>
+      <div className="reveal">
+        <Skills dict={dict} />
+      </div>
+      <div className="reveal">
+        <Contact dict={dict} />
+      </div>
     </>
   );
 }

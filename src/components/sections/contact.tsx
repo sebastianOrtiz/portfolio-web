@@ -4,22 +4,40 @@ import { siteConfig } from "@/data/content";
 import { useState, type FormEvent } from "react";
 import { SectionHeader } from "@/components/ui/section-header";
 import { FormInput } from "@/components/ui/form-input";
+import { GitHubButton, LinkedInButton } from "@/components/ui/social-previews";
 import type { Dictionary } from "@/i18n/types";
 
-type FormStatus = "idle" | "sending" | "sent";
+type FormStatus = "idle" | "sending" | "sent" | "error";
 
-/** Simulated send delay until a real backend is integrated */
-const SIMULATED_SEND_DELAY_MS = 1000;
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/meepkbry";
 
 /** Contact section with a form and contact information sidebar */
 export function Contact({ dict }: { dict: Dictionary }) {
   const [status, setStatus] = useState<FormStatus>("idle");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
-    // TODO: integrate with real backend (nexus-crm-api or email service)
-    setTimeout(() => setStatus("sent"), SIMULATED_SEND_DELAY_MS);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const buttonLabel =
@@ -27,7 +45,9 @@ export function Contact({ dict }: { dict: Dictionary }) {
       ? dict.contact.sending
       : status === "sent"
         ? dict.contact.sent
-        : dict.contact.send;
+        : status === "error"
+          ? dict.contact.send
+          : dict.contact.send;
 
   return (
     <section id="contact" className="px-6 py-24">
@@ -61,11 +81,16 @@ export function Contact({ dict }: { dict: Dictionary }) {
             />
             <button
               type="submit"
-              disabled={status !== "idle"}
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-accent-600 px-8 text-sm font-medium text-white transition-colors hover:bg-accent-700 disabled:opacity-50 dark:bg-accent-500 dark:hover:bg-accent-600"
+              disabled={status === "sending" || status === "sent"}
+              className="inline-flex h-11 cursor-pointer items-center justify-center rounded-lg bg-accent-600 px-8 text-sm font-medium text-white transition-colors hover:bg-accent-700 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-accent-500 dark:hover:bg-accent-600"
             >
               {buttonLabel}
             </button>
+            {status === "error" && (
+              <p className="text-sm text-red-600 dark:text-red-400">
+                Something went wrong. Please try again.
+              </p>
+            )}
           </form>
 
           <ContactInfo dict={dict} />
@@ -93,23 +118,9 @@ function ContactInfo({ dict }: { dict: Dictionary }) {
         <h3 className="mb-2 text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
           {dict.contact.connectTitle}
         </h3>
-        <div className="flex flex-col gap-2">
-          <a
-            href={siteConfig.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-          >
-            GitHub &rarr;
-          </a>
-          <a
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-          >
-            LinkedIn &rarr;
-          </a>
+        <div className="flex gap-3">
+          <GitHubButton />
+          <LinkedInButton />
         </div>
       </div>
       <div>

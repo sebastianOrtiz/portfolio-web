@@ -10,31 +10,67 @@ const en: Dictionary = {
   },
   hero: {
     badge: "Available for opportunities",
-    headline: "Senior Fullstack / Backend Engineer",
+    headline: "Senior Fullstack Engineer",
     description:
-      "9+ years building scalable backend systems, REST APIs, cloud infrastructure, and modern frontends. I turn complex requirements into clean, maintainable software.",
+      "9+ years building end-to-end applications — from scalable APIs and cloud infrastructure to modern, responsive frontends. I turn complex requirements into clean, maintainable software.",
     viewProjects: "View Projects",
     getInTouch: "Get in Touch",
   },
   about: {
     title: "About Me",
     intro:
-      "I'm a senior software engineer with 9+ years of experience designing and building production systems across diverse industries. My core strength is backend architecture — APIs, databases, cloud infrastructure, and distributed systems — but I'm equally comfortable building modern frontends when the project calls for it.",
+      "I'm a senior software engineer with 9+ years of experience designing and building production systems across diverse industries. I work across the entire stack — from backend architecture (APIs, databases, distributed systems) to frontend development (Angular, React/Next.js) — delivering complete solutions end to end.",
     coreFocus: "Core Focus",
     focus: [
-      "Backend architecture and API design (REST, microservices)",
-      "Cloud infrastructure (AWS, Google Cloud)",
-      "Database design and optimization (PostgreSQL, Redis)",
-      "Event-driven and distributed systems",
-      "Modern frontend development (Angular, React/Next.js)",
-      "DevOps, containerization, and CI/CD pipelines",
+      {
+        title: "Full-Stack Architecture",
+        description: "Designing and delivering complete applications — API contracts, data models, frontend interfaces, and everything in between.",
+      },
+      {
+        title: "Backend Systems",
+        description: "REST APIs, relational databases, async processing, and distributed services with Python, Go, and C#.",
+      },
+      {
+        title: "Frontend Development",
+        description: "Building responsive, accessible interfaces with Angular, React/Next.js, TypeScript, and modern CSS frameworks.",
+      },
+      {
+        title: "Cloud & Infrastructure",
+        description: "Deploying and managing services on AWS, Google Cloud, and bare-metal servers with Docker and Nginx.",
+      },
+      {
+        title: "Event-Driven Design",
+        description: "Asynchronous pipelines with message streams, consumer groups, idempotent handlers, and full traceability.",
+      },
+      {
+        title: "DevOps & CI/CD",
+        description: "Automated builds, testing pipelines, containerized deployments, and infrastructure as code.",
+      },
     ],
     differentiators: "What Sets Me Apart",
     diffs: [
-      "Full ownership from architecture to deployment",
-      "Strong emphasis on clean code and justified technical decisions",
-      "Experience across startups and enterprise environments",
-      "Pragmatic approach: solve the real problem, avoid over-engineering",
+      {
+        title: "End-to-End Ownership",
+        description: "From architecture decisions to production deployment — I own the full lifecycle.",
+      },
+      {
+        title: "Clean, Justified Code",
+        description: "Every technical decision is deliberate, documented, and built to last.",
+      },
+      {
+        title: "Startup & Enterprise",
+        description: "Adaptable to fast-moving startups and structured enterprise environments alike.",
+      },
+      {
+        title: "Pragmatic Engineering",
+        description: "Solve the real problem. No over-engineering, no unnecessary abstractions.",
+      },
+    ],
+    stats: [
+      { value: "9+", label: "Years of Experience" },
+      { value: "5", label: "Live Projects" },
+      { value: "6", label: "Languages & Frameworks" },
+      { value: "3", label: "Cloud Platforms" },
     ],
   },
   projects: {
@@ -46,6 +82,7 @@ const en: Dictionary = {
     highlights: "Key highlights",
     liveDemo: "Live Demo",
     sourceCode: "Source Code",
+    apiPlayground: "API Playground",
     items: [
       {
         slug: "nexus-crm",
@@ -84,6 +121,29 @@ const en: Dictionary = {
         ],
       },
     ],
+  },
+  playground: {
+    howItWorks: "How it works",
+    pipeline: "Pipeline",
+    triggerOnboarding: "Trigger Onboarding",
+    runAgain: "Run Again",
+    tryAgain: "Try Again",
+    starting: "Starting...",
+    processing: "Processing...",
+    events: "Events",
+    completed: "completed",
+    eventsDescription: "This service demonstrates an <strong>event-driven architecture</strong> built with Go and Redis Streams. When a user registers, the system triggers an onboarding pipeline where each step is handled by an independent worker. Workers consume events from Redis Streams, process them idempotently, and publish the next event in the chain.",
+    searchDescription: "This API demonstrates <strong>semantic search</strong> using local AI embeddings. Documents are uploaded, split into chunks, and each chunk is converted to a 384-dimensional vector using the <strong>all-MiniLM-L6-v2</strong> model (runs locally, zero API cost). Vectors are stored in ChromaDB and queries are matched by cosine similarity.",
+    searchPlaceholder: "Type a search query...",
+    searchButton: "Search",
+    tryQueries: "Try:",
+    resultsFound: "results found",
+    noResults: "No results found. Try a different query.",
+    viewDocuments: "View indexed documents →",
+    indexedDocuments: "Indexed documents:",
+    noDocuments: "No documents indexed yet.",
+    poweredBy: "Powered by sentence-transformers (all-MiniLM-L6-v2) — local model, no API costs",
+    pipelineCompleted: "Onboarding pipeline completed successfully.",
   },
   skills: {
     title: "Skills & Stack",

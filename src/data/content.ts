@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: "Sebastian",
-  headline: "Senior Fullstack / Backend Engineer",
+  name: "Sebastian Ortiz Valencia",
+  headline: "Senior Fullstack Engineer",
   description:
-    "9+ years building scalable backend systems, REST APIs, cloud infrastructure, and modern frontends. I turn complex requirements into clean, maintainable software.",
+    "9+ years building end-to-end applications — from scalable APIs and cloud infrastructure to modern, responsive frontends. I turn complex requirements into clean, maintainable software.",
   email: "sebastianortiz989@gmail.com",
   github: "https://github.com/sebastianOrtiz",
   linkedin: "https://www.linkedin.com/in/sebastian-ortiz-valencia-86b458a6/",
@@ -11,20 +11,20 @@ export const siteConfig = {
 
 export const aboutContent = {
   intro:
-    "I'm a senior software engineer with 9+ years of experience designing and building production systems across diverse industries. My core strength is backend architecture — APIs, databases, cloud infrastructure, and distributed systems — but I'm equally comfortable building modern frontends when the project calls for it.",
+    "I'm a senior software engineer with 9+ years of experience designing and building production systems across diverse industries. I work across the entire stack — from backend architecture (APIs, databases, distributed systems) to frontend development (Angular, React/Next.js) — delivering complete solutions end to end.",
   focus: [
-    "Backend architecture and API design (REST, microservices)",
-    "Cloud infrastructure (AWS, Google Cloud)",
-    "Database design and optimization (PostgreSQL, Redis)",
-    "Event-driven and distributed systems",
-    "Modern frontend development (Angular, React/Next.js)",
-    "DevOps, containerization, and CI/CD pipelines",
+    "Full-Stack Architecture",
+    "Backend Systems",
+    "Frontend Development",
+    "Cloud & Infrastructure",
+    "Event-Driven Design",
+    "DevOps & CI/CD",
   ],
   differentiators: [
-    "Full ownership from architecture to deployment",
-    "Strong emphasis on clean code and justified technical decisions",
-    "Experience across startups and enterprise environments",
-    "Pragmatic approach: solve the real problem, avoid over-engineering",
+    "End-to-End Ownership",
+    "Clean, Justified Code",
+    "Startup & Enterprise",
+    "Pragmatic Engineering",
   ],
 };
 

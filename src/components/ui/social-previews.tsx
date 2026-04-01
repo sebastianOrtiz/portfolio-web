@@ -129,9 +129,11 @@ function LinkedInPreview() {
   return (
     <div className="w-64">
       <div className="flex items-center gap-3">
-        <div className={`flex h-12 w-12 items-center justify-center rounded-full ${LINKEDIN_BRAND_COLOR}`}>
-          <LinkedInIcon className="h-6 w-6 text-white" />
-        </div>
+        <img
+          src="https://media.licdn.com/dms/image/v2/D4E03AQG0ILcEoWQDzA/profile-displayphoto-scale_200_200/B4EZiJipDZHgAY-/0/1754654217336?e=1776297600&v=beta&t=-iH8lmlZ71Wv0XQaokskg9kXt1mYI91KpPUd3rHv5wM"
+          alt={siteConfig.name}
+          className="h-12 w-12 rounded-full object-cover"
+        />
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             {siteConfig.name}

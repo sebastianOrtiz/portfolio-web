@@ -10,31 +10,67 @@ const es: Dictionary = {
   },
   hero: {
     badge: "Disponible para oportunidades",
-    headline: "Ingeniero Senior Fullstack / Backend",
+    headline: "Ingeniero Senior Fullstack",
     description:
-      "9+ años construyendo sistemas backend escalables, APIs REST, infraestructura cloud y frontends modernos. Transformo requisitos complejos en software limpio y mantenible.",
+      "9+ años construyendo aplicaciones de inicio a fin — desde APIs escalables e infraestructura cloud hasta frontends modernos y responsivos. Transformo requisitos complejos en software limpio y mantenible.",
     viewProjects: "Ver Proyectos",
     getInTouch: "Contactar",
   },
   about: {
     title: "Sobre Mí",
     intro:
-      "Soy ingeniero de software senior con 9+ años de experiencia diseñando y construyendo sistemas en producción en diversas industrias. Mi fortaleza principal es la arquitectura backend — APIs, bases de datos, infraestructura cloud y sistemas distribuidos — pero también me siento cómodo construyendo frontends modernos cuando el proyecto lo requiere.",
+      "Soy ingeniero de software senior con 9+ años de experiencia diseñando y construyendo sistemas en producción en diversas industrias. Trabajo en todo el stack — desde arquitectura backend (APIs, bases de datos, sistemas distribuidos) hasta desarrollo frontend (Angular, React/Next.js) — entregando soluciones completas de inicio a fin.",
     coreFocus: "Enfoque Principal",
     focus: [
-      "Arquitectura backend y diseño de APIs (REST, microservicios)",
-      "Infraestructura cloud (AWS, Google Cloud)",
-      "Diseño y optimización de bases de datos (PostgreSQL, Redis)",
-      "Sistemas event-driven y distribuidos",
-      "Desarrollo frontend moderno (Angular, React/Next.js)",
-      "DevOps, contenedorización y pipelines CI/CD",
+      {
+        title: "Arquitectura Full-Stack",
+        description: "Diseño y entrega de aplicaciones completas — contratos de API, modelos de datos, interfaces frontend y todo lo intermedio.",
+      },
+      {
+        title: "Sistemas Backend",
+        description: "APIs REST, bases de datos relacionales, procesamiento asíncrono y servicios distribuidos con Python, Go y C#.",
+      },
+      {
+        title: "Desarrollo Frontend",
+        description: "Interfaces responsivas y accesibles con Angular, React/Next.js, TypeScript y frameworks CSS modernos.",
+      },
+      {
+        title: "Cloud e Infraestructura",
+        description: "Despliegue y gestión de servicios en AWS, Google Cloud y servidores dedicados con Docker y Nginx.",
+      },
+      {
+        title: "Diseño Event-Driven",
+        description: "Pipelines asíncronos con streams de mensajes, consumer groups, handlers idempotentes y trazabilidad completa.",
+      },
+      {
+        title: "DevOps y CI/CD",
+        description: "Builds automatizados, pipelines de testing, despliegues contenedorizados e infraestructura como código.",
+      },
     ],
     differentiators: "Lo Que Me Diferencia",
     diffs: [
-      "Ownership completo desde arquitectura hasta despliegue",
-      "Énfasis en código limpio y decisiones técnicas justificadas",
-      "Experiencia en startups y entornos enterprise",
-      "Enfoque pragmático: resolver el problema real, evitar sobreingeniería",
+      {
+        title: "Ownership de Inicio a Fin",
+        description: "Desde las decisiones de arquitectura hasta el despliegue en producción — soy dueño del ciclo completo.",
+      },
+      {
+        title: "Código Limpio y Justificado",
+        description: "Cada decisión técnica es deliberada, documentada y construida para perdurar.",
+      },
+      {
+        title: "Startup y Enterprise",
+        description: "Adaptable tanto a startups de ritmo rápido como a entornos enterprise estructurados.",
+      },
+      {
+        title: "Ingeniería Pragmática",
+        description: "Resolver el problema real. Sin sobreingeniería, sin abstracciones innecesarias.",
+      },
+    ],
+    stats: [
+      { value: "9+", label: "Años de Experiencia" },
+      { value: "5", label: "Proyectos en Vivo" },
+      { value: "6", label: "Lenguajes y Frameworks" },
+      { value: "3", label: "Plataformas Cloud" },
     ],
   },
   projects: {
@@ -46,6 +82,7 @@ const es: Dictionary = {
     highlights: "Aspectos clave",
     liveDemo: "Demo en Vivo",
     sourceCode: "Código Fuente",
+    apiPlayground: "API Playground",
     items: [
       {
         slug: "nexus-crm",
@@ -68,12 +105,12 @@ const es: Dictionary = {
         highlights: [
           "Consumer groups de Redis Streams para procesamiento confiable",
           "Correlation IDs para trazabilidad end-to-end",
-          "Handlers de eventos idempotentes con logica de reintentos",
+          "Handlers de eventos idempotentes con lógica de reintentos",
         ],
       },
       {
         slug: "semantic-search",
-        title: "API de Busqueda Semantica",
+        title: "API de Búsqueda Semántica",
         subtitle: "Inteligencia documental con embeddings locales",
         description:
           "Una API para subir documentos, procesarlos en chunks, generar embeddings con un modelo local y realizar búsqueda por similitud semántica.",
@@ -84,6 +121,29 @@ const es: Dictionary = {
         ],
       },
     ],
+  },
+  playground: {
+    howItWorks: "Cómo funciona",
+    pipeline: "Pipeline",
+    triggerOnboarding: "Iniciar Onboarding",
+    runAgain: "Ejecutar de nuevo",
+    tryAgain: "Reintentar",
+    starting: "Iniciando...",
+    processing: "Procesando...",
+    events: "Eventos",
+    completed: "completado",
+    eventsDescription: "Este servicio demuestra una <strong>arquitectura event-driven</strong> construida con Go y Redis Streams. Cuando un usuario se registra, el sistema dispara un pipeline de onboarding donde cada paso es manejado por un worker independiente. Los workers consumen eventos de Redis Streams, los procesan de forma idempotente y publican el siguiente evento en la cadena.",
+    searchDescription: "Esta API demuestra <strong>búsqueda semántica</strong> usando embeddings de IA locales. Los documentos se suben, se dividen en chunks, y cada chunk se convierte en un vector de 384 dimensiones usando el modelo <strong>all-MiniLM-L6-v2</strong> (corre localmente, costo cero). Los vectores se almacenan en ChromaDB y las consultas se emparejan por similitud coseno.",
+    searchPlaceholder: "Escribe tu consulta de búsqueda...",
+    searchButton: "Buscar",
+    tryQueries: "Prueba:",
+    resultsFound: "resultados encontrados",
+    noResults: "Sin resultados. Intenta con otra consulta.",
+    viewDocuments: "Ver documentos indexados →",
+    indexedDocuments: "Documentos indexados:",
+    noDocuments: "No hay documentos indexados aún.",
+    poweredBy: "Impulsado por sentence-transformers (all-MiniLM-L6-v2) — modelo local, sin costos de API",
+    pipelineCompleted: "Pipeline de onboarding completado exitosamente.",
   },
   skills: {
     title: "Habilidades & Stack",
@@ -107,10 +167,10 @@ const es: Dictionary = {
     locationDesc: "Remoto — Abierto a oportunidades remotas en todo el mundo",
   },
   searchDemo: {
-    title: "Demo de Busqueda Semantica",
+    title: "Demo de Búsqueda Semántica",
     subtitle:
       "Prueba buscar en documentos indexados usando similitud semántica impulsada por IA",
-    placeholder: "Escribe tu consulta de busqueda...",
+    placeholder: "Escribe tu consulta de búsqueda...",
     search: "Buscar",
     searching: "Buscando...",
     noResults: "Sin resultados",

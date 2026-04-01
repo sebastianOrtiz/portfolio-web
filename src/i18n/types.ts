@@ -29,9 +29,10 @@ export interface Dictionary {
     title: string;
     intro: string;
     coreFocus: string;
-    focus: string[];
+    focus: { title: string; description: string }[];
     differentiators: string;
-    diffs: string[];
+    diffs: { title: string; description: string }[];
+    stats: { value: string; label: string }[];
   };
   projects: {
     title: string;
@@ -41,6 +42,7 @@ export interface Dictionary {
     highlights: string;
     liveDemo: string;
     sourceCode: string;
+    apiPlayground: string;
     items: {
       slug: string;
       title: string;
@@ -48,6 +50,29 @@ export interface Dictionary {
       description: string;
       highlights: string[];
     }[];
+  };
+  playground: {
+    howItWorks: string;
+    pipeline: string;
+    triggerOnboarding: string;
+    runAgain: string;
+    tryAgain: string;
+    starting: string;
+    processing: string;
+    events: string;
+    completed: string;
+    eventsDescription: string;
+    searchDescription: string;
+    searchPlaceholder: string;
+    searchButton: string;
+    tryQueries: string;
+    resultsFound: string;
+    noResults: string;
+    viewDocuments: string;
+    indexedDocuments: string;
+    noDocuments: string;
+    poweredBy: string;
+    pipelineCompleted: string;
   };
   skills: {
     title: string;

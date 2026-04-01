@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sebastian | Senior Fullstack / Backend Engineer",
+  title: "Sebastian Ortiz Valencia | Senior Fullstack Engineer",
   description:
-    "Portfolio of a senior software engineer with 9+ years building scalable backend systems, REST APIs, cloud infrastructure, and modern frontends.",
+    "Portfolio of a senior fullstack engineer with 9+ years building end-to-end applications — from scalable APIs and cloud infrastructure to modern, responsive frontends.",
   keywords: [
     "software engineer",
     "fullstack developer",
