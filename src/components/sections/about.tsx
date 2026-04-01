@@ -33,7 +33,7 @@ function StatCard({
   );
 
   const cls =
-    "rounded-xl border border-zinc-200 bg-zinc-50 p-5 text-center transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:shadow-zinc-800/30";
+    "flex flex-col items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 p-5 text-center transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:shadow-zinc-800/30";
 
   if (href) {
     return (
@@ -70,7 +70,7 @@ export function About({ dict }: { dict: Dictionary }) {
         </p>
 
         {/* Stats bar */}
-        <div className="mb-16 grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="mb-16 grid auto-rows-fr grid-cols-2 gap-6 sm:grid-cols-4">
           {dict.about.stats.map((stat, i) => (
             <StatCard
               key={stat.label}

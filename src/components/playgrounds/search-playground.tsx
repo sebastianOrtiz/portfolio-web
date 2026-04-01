@@ -4,9 +4,10 @@ import { useState } from "react";
 import type { Dictionary } from "@/i18n/types";
 
 interface SearchResult {
-  text: string;
-  similarity_score: number;
-  document_id: string;
+  chunkText: string;
+  score: number;
+  documentId: string;
+  documentFilename: string;
 }
 
 interface Document {
@@ -174,15 +175,18 @@ export function SearchPlayground({ dict }: { dict: Dictionary }) {
                 <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-700">
                   <div
                     className="h-full rounded-full bg-accent-500"
-                    style={{ width: `${(result.similarity_score * 100).toFixed(0)}%` }}
+                    style={{ width: `${(result.score * 100).toFixed(0)}%` }}
                   />
                 </div>
                 <span className="shrink-0 text-xs font-medium text-accent-600 dark:text-accent-400">
-                  {(result.similarity_score * 100).toFixed(1)}%
+                  {(result.score * 100).toFixed(1)}%
                 </span>
               </div>
               <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-                {result.text}
+                {result.chunkText}
+              </p>
+              <p className="mt-2 text-xs text-zinc-400 dark:text-zinc-500">
+                {result.documentFilename}
               </p>
             </div>
           ))}

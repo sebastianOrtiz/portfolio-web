@@ -4,9 +4,7 @@ import { useState } from "react";
 import { SectionHeader } from "@/components/ui/section-header";
 import type { Dictionary } from "@/i18n/types";
 
-const SEARCH_API_URL =
-  process.env.NEXT_PUBLIC_SEARCH_API_URL ||
-  "https://nexus-crm-api.sebasing.dev/api/v1/search/query";
+const SEARCH_API_URL = process.env.NEXT_PUBLIC_SEARCH_API_URL!;
 
 /** Maximum characters shown per result chunk before truncation */
 const MAX_CHUNK_LENGTH = 200;
