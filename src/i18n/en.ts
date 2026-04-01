@@ -69,7 +69,7 @@ const en: Dictionary = {
     stats: [
       { value: "9+", label: "Years of Experience" },
       { value: "5", label: "Live Projects" },
-      { value: "6", label: "Languages & Frameworks" },
+      { value: "8", label: "Languages & Frameworks" },
       { value: "3", label: "Cloud Platforms" },
     ],
   },
